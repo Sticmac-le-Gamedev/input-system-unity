@@ -1118,6 +1118,7 @@ GameObject:
   - component: {fileID: 546995209}
   - component: {fileID: 546995208}
   - component: {fileID: 546995207}
+  - component: {fileID: 546995213}
   - component: {fileID: 546995211}
   - component: {fileID: 546995212}
   m_Layer: 0
@@ -1264,8 +1265,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6320c70e33b5364cbf69f71c9214bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _renderer: {fileID: 546995209}
   _rb2d: {fileID: 546995207}
+  _animator: {fileID: 546995213}
   _speed: 5
+--- !u!95 &546995213
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 546995206}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9f2a85fee3dd78b8be5aca70c68b291, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &557583700
 GameObject:
   m_ObjectHideFlags: 0
