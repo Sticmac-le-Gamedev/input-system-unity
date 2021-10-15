@@ -2,24 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] PlayerMovement _playerMovement;
 
-    private bool _isJumping = false;
-    void Update() {
-        _playerMovement.Move(Math.Sign(Input.GetAxis("Horizontal"))); // On ne convertit qu'au dernier moment pour limiter le nombre de casts
-
-        if (Input.GetButtonDown("Jump")) {
-            _isJumping = true;
-        }
+    public void Move(InputAction.CallbackContext ctx) {
+        _playerMovement.Move(Math.Sign(ctx.ReadValue<float>()));
     }
 
-    void FixedUpdate() {
-        if (_isJumping) {
+    public void Jump(InputAction.CallbackContext ctx) {
+        if (ctx.started) {
             _playerMovement.Jump();
-            _isJumping = false;
         }
     }
 }
